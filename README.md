@@ -8,7 +8,7 @@ tail -n +2  meta_data.txt | cut -f 1 | while read -r sample; do
 	pf data -i ${sample} -t sample --filetype fastq) --symlink ./fastq --rename
 	MY_PATHS=($(pf data -i ${sample} -t sample --filetype fastq))
 	for MY_PATH in ${MY_PATHS[@]}; do
-  	echo ${sample}$'\t'${MY_PATH} >> data_locations.txt
+		echo ${sample}$'\t'${MY_PATH} >> data_locations.txt
 	done
 done
 ```
