@@ -25,7 +25,7 @@ Map:
 tail -n +1 meta_data.txt| cut -f 1 | while read -r sample; do 
 	file=$(grep ${sample} data_locations.txt | grep -o [^/]*.fastq.gz | sed -e 's/#/_/g' | sed -e 's/_[12].fastq.gz//g' | sort -u )
 	mkdir ./mapping/${sample}
-	bsub -o ./mapping/${sample}/map.o -e ./mapping/${sample}/map.e -R'select[mem>=5000] rusage[mem=5000] span[hosts=1]' -M 5000 -n 8 STAR \
+	bsub -o ./mapping/${sample}/map.o -e ./mapping/${sample}/map.e -R'select[mem>=30000] rusage[mem=30000] span[hosts=1]' -M 30000 -n 8 STAR \
 	--runThreadN 8 \
 	--genomeDir ./genome_index \
 	--readFilesIn ./fastq/${file}_1.fastq.gz ./fastq/${file}_2.fastq.gz \
@@ -39,9 +39,9 @@ tail -n +1 meta_data.txt| cut -f 1 | while read -r sample; do
 	--alignIntronMin 20 \
 	--alignIntronMax 1000000 \
 	--alignMatesGapMax 1000000 \
-	--outFileNamePrefix ./mapping/${sample}/${sample} 
-	--outSAMtype BAM Unsorted \
-	done 
+	--outFileNamePrefix ./mapping/${sample}/${sample} \
+	--outSAMtype BAM Unsorted 
+done 
 ```
 
 
