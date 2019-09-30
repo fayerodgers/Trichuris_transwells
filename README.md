@@ -22,7 +22,7 @@ bsub -o index.o -e index.e -R'select[mem>=25000] rusage[mem=25000] span[hosts=1]
 Map:
 
 ```
-tail -n +1 meta_data.txt| cut -f 1 | while read -r sample; do 
+tail -n +2 meta_data.txt| cut -f 1 | while read -r sample; do 
 	file=$(grep ${sample} data_locations.txt | grep -o [^/]*.fastq.gz | sed -e 's/#/_/g' | sed -e 's/_[12].fastq.gz//g' | sort -u )
 	mkdir ./mapping/${sample}
 	bsub -o ./mapping/${sample}/map.o -e ./mapping/${sample}/map.e -R'select[mem>=30000] rusage[mem=30000] span[hosts=1]' -M 30000 -n 8 STAR \
