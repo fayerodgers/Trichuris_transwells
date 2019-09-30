@@ -16,9 +16,32 @@ done
 Generate STAR genome indices for mapping:
 
 ```
-bsub -o index.o -e index.e -R'select[mem>=20000] rusage[mem=20000] span[hosts=1]' -M 20000 -n 8 STAR --runThreadN 8 --runMode genomeGenerate --genomeDir . --genomeFastaFiles Mus_musculus.GRCm38.dna.primary_assembly.fa --sjdbGTFfile Mus_musculus.GRCm38.98.gtf
+bsub -o index.o -e index.e -R'select[mem>=25000] rusage[mem=25000] span[hosts=1]' -M 25000 -n 8 STAR --runThreadN 8 --runMode genomeGenerate --genomeDir . --genomeFastaFiles Mus_musculus.GRCm38.dna.primary_assembly.fa --sjdbGTFfile Mus_musculus.GRCm38.98.gtf
 ```
 
 Map:
+
+```
+tail -n +1 meta_data.txt| cut -f 1 | while read -r sample; do 
+	file=$(grep ${sample} data_locations.txt | grep -o [^/]*.fastq.gz | sed -e 's/#/_/g' | sed -e 's/_[12].fastq.gz//g' | sort -u )
+	mkdir ./mapping/${sample}
+	bsub -o ./mapping/${sample}/map.o -e ./mapping/${sample}/map.e -R'select[mem>=5000] rusage[mem=5000] span[hosts=1]' -M 5000 -n 8 STAR \
+	--runThreadN 8 \
+	--genomeDir ./genome_index \
+	--readFilesIn ./fastq/${file}_1.fastq.gz ./fastq/${file}_2.fastq.gz \
+	--readFilesCommand gunzip -c \
+	--outFilterType BySJout \
+	--outFilterMultimapNmax 20 \
+	--alignSJoverhangMin 8 \
+	--alignSJDBoverhangMin 1 \
+	--outFilterMismatchNmax 999 \
+	--outFilterMismatchNoverReadLmax 0.04 \
+	--alignIntronMin 20 \
+	--alignIntronMax 1000000 \
+	--alignMatesGapMax 1000000 \
+	--outFileNamePrefix ./mapping/${sample}/${sample} 
+	--outSAMtype BAM Unsorted \
+	done 
+```
 
 
