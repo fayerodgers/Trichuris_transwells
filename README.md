@@ -47,7 +47,7 @@ Count features:
 
 ```
 tail -n +2 meta_data.txt| cut -f 1 | while read -r sample; do 
-	bsub -o ./mapping/${sample}/count.o -e ./mapping/${sample}/count.e -R 'select[mem>=200] rusage[mem=200]' -M 200 'htseq-count -f bam -s no -m union ./mapping/${sample}/${sample}Aligned.out.bam genome_index/Mus_musculus.GRCm38.98.gtf > ./mapping/${sample}/${sample}.count'
+	bsub -o ./mapping/${sample}/count.o -e ./mapping/${sample}/count.e -R 'select[mem>=200] rusage[mem=200]' -M 200 "htseq-count -f bam -s no -m union ./mapping/${sample}/${sample}Aligned.out.bam genome_index/Mus_musculus.GRCm38.98.gtf > ./mapping/${sample}/${sample}.count"
 done
 	
 ```
