@@ -51,4 +51,12 @@ tail -n +2 meta_data.txt| cut -f 1 | while read -r sample; do
 done
 	
 ```
-
+ Alternatively, get counts with Kallisto:
+ 
+ ```
+ tail -n +2 meta_data.txt| cut -f 1 | while read -r sample; do 
+	file=$(grep ${sample} data_locations.txt | grep -o [^/]*.fastq.gz | sed -e 's/#/_/g' | sed -e 's/_[12].fastq.gz//g' | sort -u )
+	mkdir ./kallisto_counts/${sample}
+	bsub -o ./kallisto_counts/${sample}/kallisto.o -e ./kallisto_counts/${sample}/kallisto.e -R 'select[mem>=5000] rusage[mem=5000] span[hosts=1]' -M 5000 kallisto quant -i /lustre/scratch118/infgen/team133/fr7/trichuris_projects/Mus_musculus.GRCm38.cdna.E97.all.idx -o ./kallisto_counts/${sample} -b 100 ./fastq/${file}_1.fastq.gz ./fastq/${file}_2.fastq.gz 
+	done
+ ```
