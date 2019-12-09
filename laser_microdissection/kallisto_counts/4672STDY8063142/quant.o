@@ -1,0 +1,33 @@
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@bc-27-2-05>
+Subject: Job 7739179: <kallisto quant -i /lustre/scratch118/infgen/team133/fr7/trichuris_projects/Mus_musculus.GRCm38.cdna.E98.all.idx -o 4672STDY8063142 -b 100 /lustre/scratch118/infgen/pathogen/pathpipe/helminths/seq-pipelines/Mus/musculus/TRACKING/4672/4672STDY8063142/SLX/23689828/31123_3#65/31123_3#65_1.fastq.gz /lustre/scratch118/infgen/pathogen/pathpipe/helminths/seq-pipelines/Mus/musculus/TRACKING/4672/4672STDY8063142/SLX/23689828/31123_3#65/31123_3#65_2.fastq.gz /lustre/scratch118/infgen/pathogen/pathpipe/helminths/seq-pipelines/Mus/musculus/TRACKING/4672/4672STDY8063142/SLX/23689828/31123_2#65/31123_2#65_1.fastq.gz /lustre/scratch118/infgen/pathogen/pathpipe/helminths/seq-pipelines/Mus/musculus/TRACKING/4672/4672STDY8063142/SLX/23689828/31123_2#65/31123_2#65_2.fastq.gz /lustre/scratch118/infgen/pathogen/pathpipe/helminths/seq-pipelines/Mus/musculus/TRACKING/4672/4672STDY8063142/SLX/23689828/31123_4#65/31123_4#65_1.fastq.gz /lustre/scratch118/infgen/pathogen/pathpipe/helminths/seq-pipelines/Mus/musculus/TRACKING/4672/4672STDY8063142/SLX/23689828/31123_4#65/31123_4#65_2.fastq.gz> in cluster <farm3> Done
+
+Job <kallisto quant -i /lustre/scratch118/infgen/team133/fr7/trichuris_projects/Mus_musculus.GRCm38.cdna.E98.all.idx -o 4672STDY8063142 -b 100 /lustre/scratch118/infgen/pathogen/pathpipe/helminths/seq-pipelines/Mus/musculus/TRACKING/4672/4672STDY8063142/SLX/23689828/31123_3#65/31123_3#65_1.fastq.gz /lustre/scratch118/infgen/pathogen/pathpipe/helminths/seq-pipelines/Mus/musculus/TRACKING/4672/4672STDY8063142/SLX/23689828/31123_3#65/31123_3#65_2.fastq.gz /lustre/scratch118/infgen/pathogen/pathpipe/helminths/seq-pipelines/Mus/musculus/TRACKING/4672/4672STDY8063142/SLX/23689828/31123_2#65/31123_2#65_1.fastq.gz /lustre/scratch118/infgen/pathogen/pathpipe/helminths/seq-pipelines/Mus/musculus/TRACKING/4672/4672STDY8063142/SLX/23689828/31123_2#65/31123_2#65_2.fastq.gz /lustre/scratch118/infgen/pathogen/pathpipe/helminths/seq-pipelines/Mus/musculus/TRACKING/4672/4672STDY8063142/SLX/23689828/31123_4#65/31123_4#65_1.fastq.gz /lustre/scratch118/infgen/pathogen/pathpipe/helminths/seq-pipelines/Mus/musculus/TRACKING/4672/4672STDY8063142/SLX/23689828/31123_4#65/31123_4#65_2.fastq.gz> was submitted from host <farm3-head5> by user <fr7> in cluster <farm3>.
+Job was executed on host(s) <bc-27-2-05>, in queue <normal>, as user <fr7> in cluster <farm3>.
+</nfs/users/nfs_f/fr7> was used as the home directory.
+</lustre/scratch118/infgen/team133/fr7/git_repos/Trichuris_transwells/laser_microdissection/kallisto_counts> was used as the working directory.
+Started at Fri Nov 22 16:39:38 2019
+Results reported on Sat Nov 30 14:29:59 2019
+Cannot open your job file: /nfs/users/nfs_f/fr7/.lsbatch/1574440731.7739179
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   3421.25 sec.
+    Max Memory :                                 3515 MB
+    Average Memory :                             3514.38 MB
+    Total Requested Memory :                     5000.00 MB
+    Delta Memory :                               1485.00 MB
+    Max Swap :                                   3642 MB
+    Max Processes :                              3
+    Max Threads :                                5
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <4672STDY8063142/quant.e> for stderr output of this job.
+
