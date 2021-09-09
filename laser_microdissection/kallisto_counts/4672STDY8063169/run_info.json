@@ -1,9 +1,0 @@
-{
-	"n_targets": 119215,
-	"n_bootstraps": 100,
-	"n_processed": 12382153,
-	"kallisto_version": "0.43.1",
-	"index_version": 10,
-	"start_time": "Fri Nov 22 16:40:42 2019",
-	"call": "kallisto quant -i /lustre/scratch118/infgen/team133/fr7/trichuris_projects/Mus_musculus.GRCm38.cdna.E98.all.idx -o 4672STDY8063169 -b 100 /lustre/scratch118/infgen/pathogen/pathpipe/helminths/seq-pipelines/Mus/musculus/TRACKING/4672/4672STDY8063169/SLX/23689923/31123_4#14/31123_4#14_1.fastq.gz /lustre/scratch118/infgen/pathogen/pathpipe/helminths/seq-pipelines/Mus/musculus/TRACKING/4672/4672STDY8063169/SLX/23689923/31123_4#14/31123_4#14_2.fastq.gz /lustre/scratch118/infgen/pathogen/pathpipe/helminths/seq-pipelines/Mus/musculus/TRACKING/4672/4672STDY8063169/SLX/23689923/31123_3#14/31123_3#14_1.fastq.gz /lustre/scratch118/infgen/pathogen/pathpipe/helminths/seq-pipelines/Mus/musculus/TRACKING/4672/4672STDY8063169/SLX/23689923/31123_3#14/31123_3#14_2.fastq.gz /lustre/scratch118/infgen/pathogen/pathpipe/helminths/seq-pipelines/Mus/musculus/TRACKING/4672/4672STDY8063169/SLX/23689923/31123_2#14/31123_2#14_1.fastq.gz /lustre/scratch118/infgen/pathogen/pathpipe/helminths/seq-pipelines/Mus/musculus/TRACKING/4672/4672STDY8063169/SLX/23689923/31123_2#14/31123_2#14_2.fastq.gz"
-}
